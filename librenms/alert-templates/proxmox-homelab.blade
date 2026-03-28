@@ -1,0 +1,20 @@
+{{-- Proxmox Homelab Alert Template --}}
+{{-- Fixes string|array type error in default Blade templates --}}
+@if ($alert->state == 1)
+🔴 RIASZTÁS
+@else
+✅ HELYREÁLLT
+@endif
+
+🧬 Host: {{ $alert->sysName }}
+🌐 IP: {{ $alert->hostname }}
+🔥 Szabály: {{ $alert->name }}
+⚠️  Szint: {{ $alert->severity }}
+🕒 Idő: {{ $alert->timestamp }}
+
+@if ($alert->faults)
+📋 Hiba részletei:
+@foreach ($alert->faults as $key => $value)
+#{{ $key }}: {{ $value["string"] }}
+@endforeach
+@endif
