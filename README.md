@@ -1,4 +1,4 @@
-# homelab-monitoring-stack
+﻿# homelab-monitoring-stack
 
 > **Full-stack observability for Proxmox homelabs: LibreNMS (SNMP/network) + Grafana + Prometheus + Node Exporter + cAdvisor.**  
 > The two stacks complement each other — LibreNMS owns network-layer visibility (router, switches, SNMP traps), Prometheus/Grafana owns node and container metrics.
@@ -58,7 +58,7 @@ homelab-monitoring-stack/
 
 ```bash
 # On CT208 (grafana LXC):
-git clone https://github.com/YOUR_USER/homelab-monitoring-stack.git
+git clone https://github.com/gaiagent0/homelab-monitoring-stack.git
 cd homelab-monitoring-stack
 cp configs/env.example configs/env && nano configs/env
 cd grafana
