@@ -1,0 +1,18 @@
+# /etc/mysql/mariadb.conf.d/90-librenms-tuning.cnf
+#
+# LibreNMS production tuning a CT203 (2GB RAM) konténerhez.
+# innodb_buffer_pool_size ökölszabály: ~50% a konténer RAM-jából.
+# HA A RAM-OT VÁLTOZTATOD, EZT ARÁNYOSAN ÁLLÍTSD ÁT.
+#
+# FIGYELEM: ne emeld a buffer pool-t a rendszer RAM fölé / közelébe,
+# mert MariaDB OOM-kill kockázatot okoz alacsony RAM-mal rendelkező
+# konténereken (pl. 512MB RAM mellett maradj 128MB-on).
+#
+# Forrás: https://docs.librenms.org/Support/Performance/
+
+[mysqld]
+innodb_buffer_pool_size = 1024M
+innodb_flush_log_at_trx_commit = 2
+innodb_file_per_table = 1
+innodb_read_io_threads = 4
+innodb_write_io_threads = 4
