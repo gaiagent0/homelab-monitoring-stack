@@ -10,11 +10,11 @@
 ## Stack Overview
 
 ```
-LibreNMS (CT203)           Grafana + Prometheus (CT208)
-  SNMP polling               Node Exporter  → pve-01/02/03
-  Network topology           cAdvisor       → docker-host CT
-  Telegram alerts            Grafana dashboards (1860, 193)
-  Blade template alerts      Alertmanager (optional)
+LibreNMS (CT203) ⚠️       Grafana + Prometheus (CT208)
+  ⚠️ Jelenleg nem elérhető     Node Exporter  → pve-01/02/03
+  CT203 más alkalmazást fut   cAdvisor       → docker-host CT
+  (Symfony app hibával)       Grafana dashboards (1860, 193)
+                              Alertmanager (optional)
 ```
 
 ### Why both?
@@ -96,3 +96,5 @@ See [docs/librenms-alerts.md](docs/librenms-alerts.md) for full procedure.
 ---
 
 *Tested on: LibreNMS 24.x, Prometheus 2.x, Grafana 11.x, Node Exporter 1.8.2*
+
+> ⚠️ **Status:** A LibreNMS (CT203) jelenleg nem elérhető — a konténeren egy Symfony alkalmazás fut hibás állapotban. Az SNMP alapú hálózati monitorozás átmenetileg szünetel. A Grafana + Prometheus stack (CT208) változatlanul üzemel.
